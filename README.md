@@ -8,14 +8,14 @@ PatchedCLRLoader is a fork of PatchlessCLRLoader to load .NET assembly and direc
 
 Since patching AmsiScanBuffer in amsi.dll and Eventwrite in ntdll.dll does not work in new windows defender version (e.g. win11),I have also tried to use hwbp in crowdstrike but do not know why it does not execute anything. Therefore, I tried to patch the AmsiScanBuffer in clr.dll and NtTraceEvent instead.
 
-<b>Why patching clr work？<b>
+<b>Why patching clr work？<b></br>
 Reference: <https://practicalsecurityanalytics.com/new-amsi-bypss-technique-modifying-clr-dll-in-memory/>
 ![](images/callstack.png)
 
-when you are loading assembly ,AmsiScanBuffer will be called in amsi.dll , the AmsiScanBuffer function will then call AmsiScan in clr.dll which will  
+when you are loading assembly ,AmsiScanBuffer will be called in amsi.dll , the AmsiScanBuffer function will then call AmsiScan in clr.dll 
 
 ![](images/presudocode.png)
-the AV will only identified the contents as malicious when the global_pAmsiContext is not equal to 0 in AmsiScan function in clr.dll. So we may find the address of the AmsiScanBuffer in GetProcAddress, and simply patch it to zero or not exist function buffer.Then, the Amsi can be easily bypassed. 
+In AmsiScan function, the AV will only identified the contents as malicious when the global_pAmsiContext is not equal to 0 in AmsiScan function in clr.dll. So we may find the address of the AmsiScanBuffer in GetProcAddress, and simply patch it to zero or not exist function buffer.Then, the Amsi can be easily bypassed. 
 
 # Usage
 
