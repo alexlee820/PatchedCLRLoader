@@ -36,7 +36,7 @@ python RC4encrypt.py -i <c# assembly> -o <output> -k <Encryption Key>
 | CrowdStrike | :white_check_mark: |
 
 # Credits
-InlineExecute-Assembly - <https://github.com/anthemtotheego/InlineExecute-Assembly>
-PatchlessCLRLoader - <https://github.com/VoldeSec/PatchlessCLRLoader>
-<https://github.com/S3cur3Th1sSh1t/Amsi-Bypass-Powershell>
+InlineExecute-Assembly - <https://github.com/anthemtotheego/InlineExecute-Assembly> </br>
+PatchlessCLRLoader - <https://github.com/VoldeSec/PatchlessCLRLoader></br>
+<https://github.com/S3cur3Th1sSh1t/Amsi-Bypass-Powershell></br>
 <https://github.com/Mr-Un1k0d3r/AMSI-ETW-Patch>
