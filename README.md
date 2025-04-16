@@ -1,12 +1,13 @@
 # PatchedCLRLoader
-PatchedCLRLoader is a fork of PatchlessCLRLoader to load .NET assembly and direct the output to mailslot.This is just a practise for me to write some malware . And I have also tried to write my own code with hwbp to test in crowdstrike but do not know why it does not have any output after executing assembly, so I write this(patching) loader to bypass amsi and etw for assembly.
+PatchedCLRLoader is a fork of PatchlessCLRLoader to load .NET assembly and direct the output to mailslot.This is just a practise for me to write some malware . And I have also tried to write my own code with hwbp to test in crowdstrike but do not know why it does not have any output after executing assembly, so I write this(patching) loader to bypass amsi and etw for assembly.</br>
 This repo includes:
 <ul>
   <li>RC4 encryption payload python script</li>
   <li>Patching CLR and ETW bypass (Exe) via direct Syscalls</li>
   <li>Patching CLR and ETW bypass (DLL) via direct Syscalls</li>
 </ul>
-Since patching AmsiScanBuffer in amsi.dll and Eventwrite in ntdll.dll does not work in new windows defender version (e.g. win11). Therefore, I tried to patch the AmsiScanBuffer in clr.dll and NtTraceEvent instead.
+</br>
+Since patching AmsiScanBuffer in amsi.dll and Eventwrite in ntdll.dll does not work in new windows defender version (e.g. win11). Therefore, I tried to patch AmsiScanBuffer in clr.dll and NtTraceEvent instead.</br>
 
 <b>Why patching clr work？</b></br>
 Reference: <https://practicalsecurityanalytics.com/new-amsi-bypss-technique-modifying-clr-dll-in-memory/>
